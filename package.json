@@ -1,11 +1,12 @@
 {
-    "name": "com.pucpr.name",
-    "displayName": "NAME",
+    "name": "com.pucpr.gizmocontrol",
+    "displayName": "Gizmo Control",
     "description": "",
     "version": "0.1.0",
     "unity": "2019.3",
     "changelogUrl": "",
-    "_upm": {
-    "changelog": "New Features:\n\n- feature description"
-  }
+    "_upm": {"changelog": ""},
+    "author":{
+      "name": "PUCPR"
+    }
 }
