@@ -6,3 +6,6 @@
 - LICENSE
 - package.json
   - Unity package config
+- GizmoDrawMode
+- GizmoDrawer
+- IGizmoControl

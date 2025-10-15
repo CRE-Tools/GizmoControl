@@ -1,0 +1,14 @@
+{
+    "name": "com.pucpr.gizmocontrol.runtime",
+    "rootNamespace": "PUCPR.GizmoControl",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
