@@ -2,8 +2,8 @@
     "name": "com.pucpr.gizmocontrol",
     "displayName": "Gizmo Control",
     "description": "",
-    "version": "0.1.0",
-    "unity": "2019.3",
+    "version": "1.0.0",
+    "unity": "2020.3",
     "changelogUrl": "",
     "_upm": {"changelog": ""},
     "author":{
