@@ -1,51 +1,30 @@
 #if UNITY_EDITOR
-using System.Collections.Generic;
 using UnityEditor;
+#endif
 
 
 namespace PUCPR.GizmoControl
 {
     public static class GizmoDrawer
     {
-        static GizmoDrawer() => SceneView.duringSceneGui += _ => CleanUpNulls();
+#if UNITY_EDITOR
+        [DrawGizmo(GizmoType.NonSelected)]
+        static void DrawNotSelected(IGizmoControl client, GizmoType gizmoType) =>
+            DrawForClient(client, GizmoDrawMode.NotSelected);
+
+        [DrawGizmo(GizmoType.Selected)]
+        static void DrawSelected(IGizmoControl client, GizmoType gizmoType) =>
+            DrawForClient(client, GizmoDrawMode.SelectedOnly);
 
         [DrawGizmo(GizmoType.Selected | GizmoType.NonSelected)]
-        static void DrawAllGizmos(IGizmoControl _, GizmoType gizmoType)
+        static void DrawActive(IGizmoControl client, GizmoType gizmoType) =>
+            DrawForClient(client, GizmoDrawMode.Always);
+        static void DrawForClient(IGizmoControl client, GizmoDrawMode drawMode)
         {
-            foreach (var client in GizmoControlCache.Clients)
-            {
-                if (client == null) continue;
+            if (client.DrawMode != drawMode) return;
 
-                switch (client.DrawMode)
-                {
-                    case GizmoDrawMode.Always:
-                        client.DrawGizmos();
-                        break;
-                    case GizmoDrawMode.SelectedOnly:
-                        if ((gizmoType & GizmoType.Selected) != 0)
-                            client.DrawGizmos();
-                        break;
-                    case GizmoDrawMode.NotSelected:
-                        if ((gizmoType & GizmoType.NotInSelectionHierarchy) != 0)
-                            client.DrawGizmos();
-                        break;
-                }
-            }
+            client.DrawGizmos();
         }
-
-        private static void CleanUpNulls()
-        {
-            var toRemove = new List<IGizmoControl>();
-            foreach (var client in GizmoControlCache.Clients)
-            {
-                if (client == null) toRemove.Add(client);
-            }
-
-            foreach (var client in toRemove)
-            {
-                GizmoControlCache.Unregister(client);
-            }
-        }
+#endif
     }
 }
-#endif

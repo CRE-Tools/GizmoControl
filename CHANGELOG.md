@@ -1,3 +1,8 @@
+## [1.0.2] - 2025-10-30
+
+### Fixed
+- Reverted GizmoDraw to per object case
+
 ## [1.0.1] - 2025-10-30
 
 ### Fixed
