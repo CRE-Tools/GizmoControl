@@ -2,7 +2,7 @@
 > <a href="/Documentation~/UserManual.pdf">View this manual as PDF</a>
 
 <h1 align="center">Gizmo Control - User Manual</h1>
-<p align="right">v1.0.0</p>
+<p align="right">v1.0.1</p>
 
 ## Table of Contents
 1. [Introduction](#introduction)

@@ -1,3 +1,8 @@
+## [1.0.1] - 2025-10-30
+
+### Fixed
+- `GizmoDrawMode.NotSelected` was working like `GizmoDrawMode.Always`.
+
 ## [1.0.0] - 2025-10-28
 
 ### Modified
