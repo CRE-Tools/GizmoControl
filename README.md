@@ -1,4 +1,4 @@
-v1.0.1
+v1.0.2
 <p align="center">
     <img width="100" height="100" src="/Documentation~/logos/1024x.png" align="center" />
 </p>
