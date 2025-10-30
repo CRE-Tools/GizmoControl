@@ -26,7 +26,7 @@ namespace PUCPR.GizmoControl
                             client.DrawGizmos();
                         break;
                     case GizmoDrawMode.NotSelected:
-                        if ((gizmoType & GizmoType.Selected) == 0)
+                        if ((gizmoType & GizmoType.NotInSelectionHierarchy) != 0)
                             client.DrawGizmos();
                         break;
                 }
